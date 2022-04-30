@@ -1,6 +1,6 @@
 
 export enum MenuEnum {
-    WELCOME = "WELCOME",
-    PEOPLE = "PEOPLE",
-    PRODUCTS = "PRODUCTS",
+    WELCOME = 0,
+    PEOPLE = 1,
+    PRODUCTS = 2,
 }
