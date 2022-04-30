@@ -1,0 +1,7 @@
+<div>
+    <p> {{detail.name}} {{detail.description}} {{detail.price}} {{detail.expiry}} {{detail.rating}}
+        {{detail.qty}}
+    </p>
+    <fin-common-selector [bottone]="'SHOW'" (selection)="detailProductSelectionHandler()"></fin-common-selector>
+    <fin-common-selector [bottone]="'DELETE'" (selection)="deleteProductSelectionHandler()"></fin-common-selector>
+</div>

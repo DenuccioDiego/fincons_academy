@@ -1,0 +1,6 @@
+<nav>
+  <span *ngFor="let type of typeList; index as i" (click)="showChange(typeList[i])"> {{typeList[i]}} </span>
+</nav>
+
+<fin-product-container *ngIf="variabile === 'Prodotti'"></fin-product-container>
+<fin-persona-container *ngIf="variabile === 'Persone'"></fin-persona-container>

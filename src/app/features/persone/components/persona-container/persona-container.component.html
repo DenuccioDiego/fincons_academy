@@ -1,0 +1,6 @@
+<div>
+    <h1>Lista Persone</h1>
+    <fin-persona-detail *ngFor="let persona of personaList" [detail]="persona"
+        (detailSelection)="detailSelectionHandler($event)" (deleteSelection)="deleteSelectionHandler($event)">
+    </fin-persona-detail>
+</div>

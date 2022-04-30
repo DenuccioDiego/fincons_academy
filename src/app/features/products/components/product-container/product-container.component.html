@@ -1,0 +1,7 @@
+<div>
+    <h2>Lista prodotti</h2>
+    <fin-product-detail *ngFor="let product of productList" [detail]="product"
+        (detailProductSelection)="detailProductSelectionHandler($event)"
+        (deleteProductSelection)="deleteProductSelectionHandler($event)">
+    </fin-product-detail>
+</div>
