@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { PersonaModule } from './features/persone/persona.module';
 import { ProductModule } from './features/products/product.module';
 import { SharedModule } from './shared/shared.module';
+import { NavbarModule } from './@template/navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,8 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     ProductModule,
     PersonaModule,
+    NavbarModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
