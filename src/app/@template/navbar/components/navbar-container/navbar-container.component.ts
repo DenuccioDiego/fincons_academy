@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MenuEnum } from '../../enums/menu-enum';
+
 
 @Component({
   selector: 'fin-navbar-container',
@@ -12,4 +14,9 @@ export class NavbarContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Output() menuSelection: EventEmitter<MenuEnum> = new EventEmitter<MenuEnum>();
+
+  manageMenu(index: number): void {
+    this.menuSelection.emit(index);
+  }
 }
