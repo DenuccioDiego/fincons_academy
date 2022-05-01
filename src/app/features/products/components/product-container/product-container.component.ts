@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/core/services/product.service';
 import { Product } from 'src/app/shared/model/product-model';
 
 @Component({
@@ -8,50 +9,19 @@ import { Product } from 'src/app/shared/model/product-model';
 })
 export class ProductContainerComponent implements OnInit {
 
+  productList: Product[] = [];
+
   ngOnInit(): void {
   }
 
-  productList: Product[] = [];
-
-  constructor() {
-    this.buildProductArray();
-  }
-
-  private buildProductArray(): void {
-    this.productList = [
-      {
-        name: 'Pasta',
-        description: 'pasta provienete dalla puglia',
-        price: 4,
-        expiry: "22/04/2025",
-        rating: 5,
-        qty: 50,
-      },
-      {
-        name: 'Pomodoro',
-        description: 'pomodoro provienete dalla sicilia',
-        price: 40,
-        expiry: "10/12/2028",
-        rating: 1,
-        qty: 25,
-      },
-      {
-        name: 'Vino',
-        description: 'vino francese',
-        price: 55,
-        expiry: "12/01/2027",
-        rating: 4,
-        qty: 75,
-      },
-      {
-        name: 'Carciofo',
-        description: 'Lorem ipsum dolor sit amet.',
-        price: 24,
-        expiry: "12/08/2200",
-        rating: 3,
-        qty: 200,
-      },
-    ]
+  constructor(private productService: ProductService) {
+    this.productService.getAllProducts().subscribe(
+      result => {
+        this.productList = result;
+      }, error => {
+        console.log(error);
+      }
+    )
   }
 
   deleteFunction(object: Object, args: any[]) {

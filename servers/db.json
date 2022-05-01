@@ -1,0 +1,115 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ],
+    "profile": {
+        "name": "typicode"
+    },
+    "products": [
+        {
+            "id": 2,
+            "codice": "SADFSDRR555",
+            "descrizione": "Bel prodotto",
+            "costo": 100330,
+            "scadenza": "01/01/2099",
+            "qta": 23
+        },
+        {
+            "id": 3,
+            "codice": "SADFSDRR555",
+            "descrizione": "prodottoid3",
+            "costo": 412,
+            "scadenza": "02/11/2099",
+            "qta": 45
+        },
+        {
+            "id": 4,
+            "codice": "12saD213@sad",
+            "descrizione": "prodottoid4",
+            "costo": 120,
+            "scadenza": "07/12/2025",
+            "qta": 67
+        },
+        {
+            "id": 5,
+            "codice": "12sDFGC13@sad",
+            "descrizione": "prodottoid5",
+            "costo": 1044,
+            "scadenza": "30/11/2035",
+            "qta": 49
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "Roberto",
+            "lastName": "Giontella",
+            "email": "r.giontella@2clever.it",
+            "active": 1,
+            "username": "admin1",
+            "password": "password1",
+            "token": "EXKRK5zkm3qbE3wouczgmusazI8akqlqEDv6+g1EM90pOI/YxRm3tr16SXqWRyx/",
+            "role": {
+                "code": "ADMIN"
+            },
+            "profile": {
+                "color": "red",
+                "location": {
+                    "lat": 23,
+                    "lon": 45
+                }
+            }
+        },
+        {
+            "id": 2,
+            "name": "Mario",
+            "lastName": "Rossi",
+            "email": "m.rossi@2clever.it",
+            "active": 1,
+            "username": "admin2",
+            "password": "password2",
+            "token": "EXKRK5zkm3qbE3wouczgmusazI8akqlqEDv6+g1EM90pOI/YxRm3tr16SXqWRyx/",
+            "role": {
+                "code": "USER"
+            },
+            "profile": {
+                "color": "yellow",
+                "location": {
+                    "lat": 23,
+                    "lon": 45
+                }
+            }
+        },
+        {
+            "id": 3,
+            "name": "Sofia",
+            "lastName": "Ricci",
+            "email": "r.giontella@2clever.it",
+            "active": 1,
+            "username": "admin11",
+            "password": "password3",
+            "token": "EXKRK5zkm3qbE3wouczgmusazI8akqlqEDv6+g1EM90pOI/YxRm3tr16SXqWRyx/",
+            "role": {
+                "code": "LEAD"
+            },
+            "profile": {
+                "color": "blue",
+                "location": {
+                    "lat": 23,
+                    "lon": 45
+                }
+            }
+        }
+    ]
+}

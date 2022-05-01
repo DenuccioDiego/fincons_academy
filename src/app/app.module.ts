@@ -6,6 +6,8 @@ import { PersonaModule } from './features/persone/persona.module';
 import { ProductModule } from './features/products/product.module';
 import { SharedModule } from './shared/shared.module';
 import { NavbarModule } from './@template/navbar/navbar.module';
+import { CoreModule } from './core/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { NavbarModule } from './@template/navbar/navbar.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    CoreModule,
     SharedModule,
     ProductModule,
     PersonaModule,
