@@ -8,14 +8,15 @@ import { Persona } from 'src/app/shared/model/persona-model';
 })
 export class PersonaDetailComponent implements OnInit {
 
-  modEdit: boolean = false;
-
   ngOnInit(): void {
   }
 
   @Input() detail: Persona;
+  @Input() detailEdit: string = "";
+  @Input() modEdit: boolean = false;
 
   @Output() detailSelection: EventEmitter<Persona> = new EventEmitter<Persona>();
+  @Output() editSelection: EventEmitter<Persona> = new EventEmitter<Persona>();
   @Output() deleteSelection: EventEmitter<Persona> = new EventEmitter<Persona>();
 
   constructor() {
@@ -30,12 +31,9 @@ export class PersonaDetailComponent implements OnInit {
     this.deleteSelection.emit(this.detail);
   }
 
-  editOnOff() {
-    if (this.modEdit) {
-      this.modEdit = false;
-    } else {
-      this.modEdit = true;
-    }
+  editSelectionHandler(): void {
+    console.log("primo step");
+    this.editSelection.emit(this.detail);
   }
 
 }

@@ -1,11 +1,13 @@
 <div>
-    <p *ngIf="!modEdit"> {{detail?.nome}} {{detail?.cognome}} {{detail?.sesso}} </p>
-    <p *ngIf="modEdit"><input [(ngModel)]="detail.nome"> <input [(ngModel)]="detail.cognome"> <input
-            [(ngModel)]="detail.sesso"></p>
+    <p *ngIf="!(modEdit && detailEdit===detail.nome)"> {{detail?.nome}} {{detail?.cognome}} {{detail?.sesso}} </p>
+    <p *ngIf="modEdit && detailEdit===detail.nome"><input [(ngModel)]="detail.nome"> <input
+            [(ngModel)]="detail.cognome">
+        <input [(ngModel)]="detail.sesso">
+    </p>
 
     <fin-common-selector [bottone]="'Mostra'" (selection)="detailSelectionHandler()"></fin-common-selector>
     <fin-common-selector [bottone]="'Cancella'" (selection)="deleteSelectionHandler()"></fin-common-selector>
-    <fin-common-selector [bottone]="!modEdit? 'Modifica':'Salva'" (click)="editOnOff()"></fin-common-selector>
-    <!-- <fin-common-selector [bottone]="'Salva'" (click)="editOff()"></fin-common-selector> -->
-    <!-- <fin-common-selector [bottone]="'Modifica'" (selection)="editSelectionHanler()"></fin-common-selector> -->
+    <fin-common-selector [bottone]="!(modEdit && detailEdit===detail.nome) ?  'Modifica':'Salva'"
+        (selection)="editSelectionHandler()">
+    </fin-common-selector>
 </div>

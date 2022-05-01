@@ -9,6 +9,9 @@ import { CrudUtils } from 'src/app/shared/utils/crud-utils';
 })
 export class PersonaContainerComponent implements OnInit {
 
+  modEdit: boolean = false;
+  detailEdit: string = "";
+
   ngOnInit(): void {
   }
   personaList: Persona[] = [];
@@ -40,6 +43,16 @@ export class PersonaContainerComponent implements OnInit {
   detailSelectionHandler(persona: Persona): void {
     console.table(persona);
     console.log("detail persona" + persona);
+  }
+
+  editSelectionHandler(persona: Persona): void {
+    console.table(persona);
+    this.detailEdit = persona.nome;
+    if (this.modEdit) {
+      this.modEdit = false;
+    } else {
+      this.modEdit = true;
+    }
   }
 
   /* Chiamo un metodo statico che si trova in utils/crud-utils importando la classe del metodo */
