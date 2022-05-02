@@ -3,10 +3,10 @@ import { Product } from 'src/app/shared/model/product-model';
 
 @Component({
   selector: 'fin-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  templateUrl: './product-list-item.component.html',
+  styleUrls: ['./product-list-item.component.css']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductListItem implements OnInit {
 
   @Input() detail: Product;
 

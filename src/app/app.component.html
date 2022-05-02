@@ -1,4 +1,5 @@
-<fin-navbar-container (menuSelection)="menuSelectionHandler($event)"></fin-navbar-container>
+<fin-navbar-container></fin-navbar-container>
 
-<fin-product-container *ngIf="showMenuPeople"></fin-product-container>
-<fin-persona-container *ngIf="showMenuProducts"></fin-persona-container>
+<div>
+    <router-outlet></router-outlet>
+</div>
