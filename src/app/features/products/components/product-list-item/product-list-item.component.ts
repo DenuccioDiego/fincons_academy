@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/shared/model/product-model';
 
 @Component({
-  selector: 'fin-product-detail',
+  selector: 'fin-product-list',
   templateUrl: './product-list-item.component.html',
   styleUrls: ['./product-list-item.component.css']
 })
