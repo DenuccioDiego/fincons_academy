@@ -22,7 +22,6 @@ export class ProductListItem implements OnInit {
   }
 
   detailProductSelectionHandler(): void {
-    //console.log(this.detail);
     this.detailProductSelection.emit(this.detail);
   }
 

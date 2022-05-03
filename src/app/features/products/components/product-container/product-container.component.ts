@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/core/services/product.service';
 import { Product } from 'src/app/shared/model/product-model';
 
@@ -14,7 +15,7 @@ export class ProductContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private router: Router) {
 
     this.productService.getAllProducts().subscribe(
       result => {
@@ -26,26 +27,11 @@ export class ProductContainerComponent implements OnInit {
 
   }
 
-
-
-  /*  deleteFunction(object: Object, args: any[]) {
-     const indexOfObject = args.findIndex((e) => {
-       return e === object;
-     });
-     args.splice(indexOfObject, 1);
-   } */
-
   detailProductSelectionHandler(product: Product): void {
-    this.productService.getOneProduct(product.id).subscribe(
-      result => {
-        var product = result;
-        console.log(product)
-      }, error => {
-        console.log(error);
-      }
-    );
+    const url = `products/${product.id};`
+    this.router.navigateByUrl(url);
 
-    console.log(product.id);
+    console.log(url);
   }
 
   deleteProductSelectionHandler(product: Product): void {
@@ -57,8 +43,19 @@ export class ProductContainerComponent implements OnInit {
         console.log(error)
       }
     )
-    //this.deleteFunction(product, this.productList);
     console.table(product);
   }
 
+
+
+
+
+
+
+  /*  deleteFunction(object: Object, args: any[]) {
+     const indexOfObject = args.findIndex((e) => {
+       return e === object;
+     });
+     args.splice(indexOfObject, 1);
+   } */
 }

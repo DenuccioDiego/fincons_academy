@@ -1,1 +1,12 @@
-<p>product-detail works!</p>
+<ng-template [ngIf]="loading" [ngIfElse]="prodListRef">
+    <p>loading</p>
+</ng-template>
+
+<ng-template #prodListRef>
+    <p>
+        {{selectProduct?.id}} {{selectProduct?.descrizione}}
+    </p>
+    <div>
+
+    </div>
+</ng-template>
