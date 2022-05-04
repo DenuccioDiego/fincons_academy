@@ -5,6 +5,7 @@ import { ProductListItem } from './components/product-list-item/product-list-ite
 import { ProductContainerComponent } from './components/product-container/product-container.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
   ],
   imports: [
     CommonModule,
+    FormsModule,
     SharedModule,
     ProductsRoutingModule
   ],

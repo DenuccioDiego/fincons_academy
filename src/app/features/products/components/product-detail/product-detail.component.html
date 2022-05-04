@@ -4,9 +4,22 @@
 
 <ng-template #prodListRef>
     <p>
-        {{selectProduct?.id}} {{selectProduct?.descrizione}}
+        {{selectProduct.id}} {{selectProduct.descrizione}}
     </p>
     <div>
-
+        <form #productDetailForm="ngForm" (submit)="saveProductByForm(productDetailForm)">
+            <div>
+                <label>Descrizione:</label> <input type="text" name="descrizione" #refDescrizione="ngModel"
+                    [ngModel]="selectProduct.descrizione" required minlength="5">
+            </div>
+            <div>
+                <small *ngIf="refDescrizione.touched && refDescrizione.invalid">
+                    Descrizione Obbligatoria
+                </small>
+            </div>
+            <div>
+                <input type="submit" value="SAVE" [disabled]="productDetailForm.touched && productDetailForm.invalid">
+            </div>
+        </form>
     </div>
 </ng-template>
